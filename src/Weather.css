@@ -1,0 +1,14 @@
+.Weather {
+  border: 1px solid black;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.City {
+  display: inline;
+  text-decoration: none;
+  margin: 10px;
+}

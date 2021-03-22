@@ -1,14 +1,89 @@
-.Weather {
+.container {
   border: 1px solid black;
+  width: 900px;
+  height: 500px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.column {
+  float: left;
+}
+.left {
+  width: 65%;
+}
+.vl {
+  border-left: 2px solid black;
+  height: 500px;
+  position: absolute;
+  left: 59%;
+  margin-left: -3px;
+}
+.right {
+  width: 35%;
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
+.mainCity {
+  float: right;
+  margin-right: 30px;
+}
+.state {
+  float: right;
+  margin-top: 50px;
+  margin-right: -150px;
+}
+.temperature {
+  float: right;
+  margin-top: 340px;
+  margin-right: -160px;
+  font-size: 60px;
+}
+.time {
+  margin-top: 350px;
+  margin-left: 25px;
 }
 
+ul.Cities {
+  list-style-type: none;
+  text-align: center;
+  padding: 15px 15px;
+}
+li.City {
+  padding: 20px;
+}
+hr {
+  width: 300px;
+}
+h4 {
+  margin-left: 20px;
+}
 .City {
   display: inline;
   text-decoration: none;
   margin: 10px;
+}
+.sunny {
+  padding-top: 40px;
+  width: 100px;
+}
+
+.condition {
+  padding-top: 30px;
+}
+.input-group {
+  margin: 0 auto;
+  width: 250px;
+}
+
+ul.discription {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 40px;
+}
+footer {
+  float: left;
+  margin-left: 300px;
 }

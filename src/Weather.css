@@ -1,6 +1,6 @@
 .container {
   border: 1px solid black;
-  width: 900px;
+  max-width: 900px;
   height: 500px;
   margin: auto;
   margin-top: 40px;
@@ -15,7 +15,6 @@
 .vl {
   border-left: 2px solid black;
   height: 500px;
-  position: absolute;
   left: 59%;
   margin-left: -3px;
 }
@@ -36,8 +35,14 @@
 .temperature {
   float: right;
   margin-top: 340px;
-  margin-right: -160px;
+  margin-right: -120px;
   font-size: 60px;
+}
+.units {
+  float: right;
+  margin-top: 370px;
+  margin-right: -165px;
+  font-size: 28px;
 }
 .time {
   margin-top: 350px;
@@ -71,9 +76,25 @@ h4 {
 .condition {
   padding-top: 30px;
 }
-.input-group {
+
+.Searching {
+  display: flex;
+  max-width: 100%;
+}
+
+.form-control {
+  display: block;
+  border-radius: 20px;
+  font-size: 14px;
   margin: 0 auto;
-  width: 250px;
+}
+.w-100 {
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 0 auto;
+}
+.col-4 {
+  margin-left: -25px;
 }
 
 ul.discription {
@@ -85,5 +106,5 @@ ul.discription {
 }
 footer {
   float: left;
-  margin-left: 300px;
+  margin-top: 10px;
 }

@@ -23,6 +23,9 @@ export default function Weather() {
           <h1 className="mainCity">Charlotte</h1>
           <h3 className="state">NC</h3>
           <h1 className="temperature">17º</h1>
+          <h5 className="units">
+            <a href=" ">C</a>|<a href=" ">F</a>
+          </h5>
           <h3 className="time">3:00pm</h3>
           <h4>Friday, May 13,2021</h4>
         </div>
@@ -36,17 +39,22 @@ export default function Weather() {
           />
           <h5 className="condition">Sunny</h5>
           <hr></hr>
-          <div className="input-group">
-            <input
-              type="search"
-              className="form-control rounded"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-            <span className="input-group-text border-0" id="search-addon">
-              <i className="fas fa-search"></i>
-            </span>
+          <div className="Searching">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city"
+                className="form-control"
+                autoFocus="on"
+              ></input>
+            </div>
+            <div className="col-4">
+              <input
+                type="submit"
+                className="btn btn-primary w-100"
+                value="Search"
+              ></input>
+            </div>
           </div>
           <div className="Temp">
             <ul className="discription">

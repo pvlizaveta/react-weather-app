@@ -1,11 +1,3 @@
-.container {
-  border: 1px solid black;
-  max-width: 900px;
-  height: 500px;
-  margin: auto;
-  margin-top: 40px;
-}
-
 .column {
   float: left;
 }
@@ -73,7 +65,7 @@ h4 {
   width: 100px;
 }
 
-.condition {
+.text-capitalize {
   padding-top: 30px;
 }
 
@@ -105,6 +97,6 @@ ul.discription {
   margin-top: 40px;
 }
 footer {
-  float: left;
-  margin-top: 10px;
+  display: block;
+  position: fixed;
 }

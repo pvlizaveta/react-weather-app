@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
+import FormattedTime from "./FormattedTime";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      date: "Wednsday May, 26",
-      time: "20:00",
+      date: new Date(response.data.dt * 1000),
+      time: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       city: response.data.name,
@@ -46,8 +48,12 @@ export default function Weather() {
             <h5 className="units">
               <a href=" ">C</a>|<a href=" ">F</a>
             </h5>
-            <h3 className="time">{weatherData.time}</h3>
-            <h4>{weatherData.date}</h4>
+            <h3 className="time">
+              <FormattedTime date={weatherData.time} />
+            </h3>
+            <h4>
+              <FormattedDate date={weatherData.date} />
+            </h4>
           </div>
           <div className="vl"></div>
           <div className="column right">
@@ -91,8 +97,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = "873778ec9745d16fa6e7696c40362dfa";
-    let city = "Charlotte";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang={en}`;
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric&lang={en}`;
     axios.get(apiUrl).then(handleResponse);
     return "Loading...";
   }

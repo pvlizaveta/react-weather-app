@@ -4,6 +4,8 @@ import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 import FormattedTime from "./FormattedTime";
 //import Forms from "./Forms";
+import "weather-react-icons/lib/css/weather-icons.css";
+import { WeatherIcon } from "weather-react-icons";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -15,12 +17,12 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       time: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       humidity: response.data.main.humidity,
       city: response.data.name,
       feelsLike: response.data.main.feels_like,
       condition: response.data.weather[0].description,
       windSpeed: response.data.wind.speed,
+      icon: response.data.weather[0].id,
     });
   }
   function search() {
@@ -72,7 +74,7 @@ export default function Weather(props) {
           </div>
           <div className="vl"></div>
           <div className="column right">
-            <img className="iconUrl" src={weatherData.iconUrl} alt="iconUrl" />
+            <WeatherIcon iconId={weatherData.icon} name="owm" />
             <h5 className="text-capitalize">{weatherData.condition}</h5>
             <hr></hr>
             <div className="Forms">

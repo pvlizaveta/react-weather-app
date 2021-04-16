@@ -3,15 +3,18 @@ import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 import FormattedTime from "./FormattedTime";
-//import Forms from "./Forms";
+//import jQuery from "jQuery";
 import "weather-react-icons/lib/css/weather-icons.css";
 import { WeatherIcon } from "weather-react-icons";
+import Cities from "./Cities";
+import Specifics from "./Specifics";
+//import Image from "./Image";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
-    console.log(response.data);
+    //console.log(response.data);
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -23,6 +26,9 @@ export default function Weather(props) {
       condition: response.data.weather[0].description,
       windSpeed: response.data.wind.speed,
       icon: response.data.weather[0].id,
+      timezone: response.data.timezone,
+      visibility: response.data.clouds.all,
+      country: response.data.sys.country,
     });
   }
   function search() {
@@ -39,26 +45,39 @@ export default function Weather(props) {
   function handleCityChange(event) {
     setCity(event.target.value);
   }
+  const [bgImg, setBgImg] = useState("");
+
+  if (weatherData.condition === "clear sky") {
+    setBgImg("./assets/clearsky.png");
+  } else if (weatherData.condition === "few clouds") {
+    setBgImg("./assets/few-clouds.png");
+  } else if (weatherData.condition === "broken clouds") {
+    setBgImg("./assets/broken-clouds.png");
+  } else if (weatherData.condition === "mist") {
+    setBgImg("./assets/mist.png");
+  } else if (weatherData.condition === "rain") {
+    setBgImg("./assets/rain.png");
+  } else if (weatherData.condition === "scattered clouds") {
+    setBgImg("./assets/scattered-clouds.png");
+  } else if (weatherData.condition === "shower rain") {
+    setBgImg("./assets/shower-rain.png");
+  } else if (weatherData.condition === "snow") {
+    setBgImg("./assets/snow.png");
+  } else if (weatherData.condition === "thunder") {
+    setBgImg("/assets/thunder.png");
+  } else {
+  }
+
   if (weatherData.ready) {
     return (
-      <div className="Weather">
+      <div className="wewer" style={{ backgroundImage: bgImg }}>
         <div className="row">
           <div className="column left">
-            <ul className="Cities">
-              <li className="City">
-                <a href=" ">Tokyo</a>
-              </li>
-              <li className="City">
-                <a href=" ">Madrid</a>
-              </li>
-              <li className="City">
-                <a href=" ">New York</a>
-              </li>
-              <li className="City">
-                <a href=" ">San Francisco</a>
-              </li>
-            </ul>
-            <h1 className="mainCity">{weatherData.city}</h1>
+            <Cities data={weatherData} />
+
+            <h1 className="mainCity">
+              {weatherData.city}, {weatherData.country}
+            </h1>
             <h1 className="temperature">
               {Math.round(weatherData.temperature)}º
             </h1>
@@ -74,7 +93,11 @@ export default function Weather(props) {
           </div>
           <div className="vl"></div>
           <div className="column right">
-            <WeatherIcon iconId={weatherData.icon} name="owm" />
+            <WeatherIcon
+              className="icon"
+              iconId={weatherData.icon}
+              name="owm"
+            />
             <h5 className="text-capitalize">{weatherData.condition}</h5>
             <hr></hr>
             <div className="Forms">
@@ -89,7 +112,6 @@ export default function Weather(props) {
                       onChange={handleCityChange}
                     />
                   </div>
-
                   <div className="col-4">
                     <input
                       type="submit"
@@ -101,13 +123,7 @@ export default function Weather(props) {
               </form>
             </div>
             <div className="Temp">
-              <ul className="discription">
-                <li>Feels like: {Math.round(weatherData.feelsLike)}º</li>
-                <hr></hr>
-                <li>Humidity: {weatherData.humidity}%</li>
-                <hr></hr>
-                <li>Wind: {Math.round(weatherData.windSpeed)}km/h</li>
-              </ul>
+              <Specifics data={weatherData} />
             </div>
           </div>
         </div>

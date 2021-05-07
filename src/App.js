@@ -8,10 +8,13 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Charlotte" />
         <footer>
-          <a href="https://github.com/pvlizaveta/react-weather-app">
+          <a
+            className="footer"
+            href="https://github.com/pvlizaveta/react-weather-app"
+          >
             Open-source code
           </a>
-          &nbsp; by Lizaveta Pauliushchyk
+          &nbsp;by Lizaveta Pauliushchyk
         </footer>
       </div>
     </div>

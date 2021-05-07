@@ -4,16 +4,24 @@ export default function Cities(props) {
   return (
     <ul className="Cities">
       <li className="City">
-        <a href=" ">Tokyo</a>
+        <a className="city" href=" ">
+          Tokyo
+        </a>
       </li>
       <li className="City">
-        <a href=" ">Madrid</a>
+        <a className="city" href=" ">
+          Madrid
+        </a>
       </li>
       <li className="City">
-        <a href=" ">New York</a>
+        <a className="city" href=" ">
+          New York
+        </a>
       </li>
       <li className="City">
-        <a href=" ">San Francisco</a>
+        <a className="city" href=" ">
+          San Francisco
+        </a>
       </li>
     </ul>
   );

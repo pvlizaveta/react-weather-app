@@ -1,6 +1,7 @@
 .wewer {
   background-size: cover;
   background-position: bottom;
+  border-radius: 20px;
 }
 
 .column {
@@ -9,53 +10,87 @@
 .left {
   width: 65%;
 }
-.vl {
-  border-left: 2px solid black;
-  height: 500px;
-  left: 59%;
-  margin-left: -3px;
-}
+
 .right {
-  width: 35%;
+  width: 33.3%;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: white;
 }
 
 .mainCity {
   float: right;
   margin-right: 30px;
+  margin-top: 15px;
+  color: white;
+  text-shadow: 3px 3px 7px black;
 }
-.state {
-  float: right;
-  margin-top: 50px;
-  margin-right: -150px;
+
+.units {
+  display: block;
+  position: absolute;
+  margin-top: 345px;
+  margin-left: 510px;
+  font-size: 25px;
+  color: white;
+  text-shadow: 3px 3px 7px black;
 }
 .temperature {
   float: right;
-  margin-top: 340px;
-  margin-right: -120px;
+  display: block;
+  position: absolute;
+  margin-top: 312px;
+  margin-left: 430px;
   font-size: 60px;
-}
-.units {
-  float: right;
-  margin-top: 370px;
-  margin-right: -165px;
-  font-size: 28px;
+  color: white;
+  text-shadow: 3px 3px 7px black;
 }
 .time {
+  display: block;
+  position: absolute;
   margin-top: 350px;
-  margin-left: 25px;
+  margin-left: 60px;
+  font-size: 20px;
+  text-shadow: 3px 3px 5px black;
+  color: white;
 }
 
 ul.Cities {
   list-style-type: none;
   text-align: center;
-  padding: 15px 15px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-left: 14px;
+  border-top-left-radius: 20px;
+  text-shadow: 3px 3px 7px black;
+}
+.City:hover {
+  text-shadow: 5px 4px 4px black;
 }
 li.City {
+  display: inline;
   padding: 20px;
 }
+a.unit {
+  text-decoration: none;
+  color: white;
+}
+a.unit :hover {
+  text-decoration: none;
+}
+a.city {
+  color: white;
+  text-decoration: none;
+}
+a.city :hover {
+  color: white;
+  text-decoration: none;
+}
 hr {
-  width: 300px;
+  width: 250px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 h4 {
   margin-left: 20px;
@@ -69,38 +104,78 @@ h4 {
 i.wi {
   display: block;
   padding: 40px;
-  color: black;
+  margin: 0 auto;
+  color: white;
   font-size: 50px;
 }
 
 .Searching {
   display: flex;
   max-width: 100%;
+  margin-left: 0px;
 }
 
-.form-control {
+.EnterACity {
   display: block;
   border-radius: 20px;
-  font-size: 14px;
-  margin: 0 auto;
+  border-bottom: 1px solid lightgray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 190px;
+  height: 32px;
+  padding: 3px;
+  font-size: 15px;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
 }
-.w-100 {
+.EnterACity:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: transparent;
+}
+.EnterACity::placeholder {
+  color: white;
+  opacity: 1;
+  background-color: transparent;
+}
+input,
+select,
+.SubmitButton {
+  color: white;
+  background-color: transparent;
+}
+.SubmitButton {
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 16px;
+  width: 70px;
+  height: 32px;
+  margin-right: 2px;
+  border: transparent;
+  background-color: transparent;
+  transition: 0.3s ease-in;
+}
+.SubmitButton:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.Forms {
+  display: inline-block;
+}
+.col-9 {
   margin: 0 auto;
 }
 .col-4 {
   margin-left: -25px;
 }
-
 ul.specifications {
   list-style-type: none;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   margin: 0;
-  margin-top: 40px;
+  margin-top: 20px;
 }
+
 footer {
   display: block;
   position: fixed;
+  margin-left: 20px;
 }

@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
-import FormattedTime from "./FormattedTime";
+//import FormattedTime from "./FormattedTime";
 //import jQuery from "jQuery";
 import "weather-react-icons/lib/css/weather-icons.css";
 import { WeatherIcon } from "weather-react-icons";
 import Cities from "./Cities";
 import Specifics from "./Specifics";
-//import Image from "./Image";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
-    //console.log(response.data);
+    console.log(response.data);
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -29,6 +28,7 @@ export default function Weather(props) {
       timezone: response.data.timezone,
       visibility: response.data.clouds.all,
       country: response.data.sys.country,
+      bgImg: getBackgroundImage(response.data.weather[0].description),
     });
   }
   function search() {
@@ -45,32 +45,40 @@ export default function Weather(props) {
   function handleCityChange(event) {
     setCity(event.target.value);
   }
-  const [bgImg, setBgImg] = useState("");
 
-  if (weatherData.condition === "clear sky") {
-    setBgImg("./assets/clearsky.png");
-  } else if (weatherData.condition === "few clouds") {
-    setBgImg("./assets/few-clouds.png");
-  } else if (weatherData.condition === "broken clouds") {
-    setBgImg("./assets/broken-clouds.png");
-  } else if (weatherData.condition === "mist") {
-    setBgImg("./assets/mist.png");
-  } else if (weatherData.condition === "rain") {
-    setBgImg("./assets/rain.png");
-  } else if (weatherData.condition === "scattered clouds") {
-    setBgImg("./assets/scattered-clouds.png");
-  } else if (weatherData.condition === "shower rain") {
-    setBgImg("./assets/shower-rain.png");
-  } else if (weatherData.condition === "snow") {
-    setBgImg("./assets/snow.png");
-  } else if (weatherData.condition === "thunder") {
-    setBgImg("/assets/thunder.png");
-  } else {
+  function getBackgroundImage(description) {
+    let bgImg = "";
+    if (description === "clear sky") {
+      bgImg = "./assets/clearsky.png";
+    } else if (description === "few clouds") {
+      bgImg = "./assets/few-clouds.png";
+    } else if (description === "broken clouds") {
+      bgImg = "./assets/broken-clouds.png";
+    } else if (description === "scattered clouds") {
+      bgImg = "./assets/scattered-clouds.png";
+    } else if (description === "overcast clouds") {
+      bgImg = "./assets/overcast-clouds.png";
+    } else if (description === "mist") {
+      bgImg = "./assets/mist.png";
+    } else if (description === "rain" || "moderate rain") {
+      bgImg = "./assets/rain-rain.png";
+    } else if (description === "shower rain") {
+      bgImg = "./assets/shower-rain.png";
+    } else if (description === "snow") {
+      bgImg = "./assets/snow.png";
+    } else if (description === "thunder") {
+      bgImg = "./assets/thunder.png";
+    } else {
+    }
+    return bgImg;
   }
 
   if (weatherData.ready) {
     return (
-      <div className="wewer" style={{ backgroundImage: bgImg }}>
+      <div
+        className="wewer"
+        style={{ backgroundImage: `url("${weatherData.bgImg}"` }}
+      >
         <div className="row">
           <div className="column left">
             <Cities data={weatherData} />
@@ -82,12 +90,15 @@ export default function Weather(props) {
               {Math.round(weatherData.temperature)}º
             </h1>
             <h5 className="units">
-              <a href=" ">C</a>|<a href=" ">F</a>
+              <a className="unit" href=" ">
+                C
+              </a>
+              |
+              <a className="unit" href=" ">
+                F
+              </a>
             </h5>
-            <h3 className="time">
-              <FormattedTime date={weatherData.time} />
-            </h3>
-            <h4>
+            <h4 className="time">
               <FormattedDate date={weatherData.date} />
             </h4>
           </div>
@@ -105,18 +116,20 @@ export default function Weather(props) {
                 <div className="Searching">
                   <div className="col-9">
                     <input
+                      className="EnterACity"
                       type="search"
-                      placeholder="Enter a city"
-                      className="form-control"
-                      autoFocus="on"
+                      placeholder="  Enter a city"
+                      autofocus="on"
+                      autocomplete="off"
                       onChange={handleCityChange}
                     />
                   </div>
                   <div className="col-4">
                     <input
                       type="submit"
-                      className="btn btn-primary w-100"
+                      className="SubmitButton"
                       value="Search"
+                      size="10"
                     />
                   </div>
                 </div>

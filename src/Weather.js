@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
-//import FormattedTime from "./FormattedTime";
 //import jQuery from "jQuery";
 import "weather-react-icons/lib/css/weather-icons.css";
 import { WeatherIcon } from "weather-react-icons";
-import Cities from "./Cities";
 import Specifics from "./Specifics";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -81,23 +80,12 @@ export default function Weather(props) {
       >
         <div className="row">
           <div className="column left">
-            <Cities data={weatherData} />
-
             <h1 className="mainCity">
               {weatherData.city}, {weatherData.country}
             </h1>
-            <h1 className="temperature">
-              {Math.round(weatherData.temperature)}º
-            </h1>
-            <h5 className="units">
-              <a className="unit" href=" ">
-                C
-              </a>
-              |
-              <a className="unit" href=" ">
-                F
-              </a>
-            </h5>
+            <div>
+              <WeatherTemperature celsius={weatherData.temperature} />
+            </div>
             <h4 className="time">
               <FormattedDate date={weatherData.date} />
             </h4>

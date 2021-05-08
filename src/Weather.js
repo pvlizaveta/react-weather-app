@@ -107,8 +107,8 @@ export default function Weather(props) {
                       className="EnterACity"
                       type="search"
                       placeholder="  Enter a city"
-                      autofocus="on"
-                      autocomplete="off"
+                      autoFocus="on"
+                      autoComplete="off"
                       onChange={handleCityChange}
                     />
                   </div>

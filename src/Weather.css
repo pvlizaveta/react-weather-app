@@ -31,7 +31,7 @@
 .units {
   display: block;
   position: absolute;
-  margin-top: 385px;
+  margin-top: 322px;
   margin-left: 510px;
   font-size: 25px;
   color: white;
@@ -41,7 +41,7 @@
   float: right;
   display: block;
   position: absolute;
-  margin-top: 352px;
+  margin-top: 283px;
   margin-left: 430px;
   font-size: 60px;
   color: white;
@@ -50,7 +50,7 @@
 .time {
   display: block;
   position: absolute;
-  margin-top: 390px;
+  margin-top: 330px;
   margin-left: 60px;
   font-size: 20px;
   text-shadow: 3px 3px 5px black;
@@ -78,7 +78,7 @@ h4 {
   margin: 10px;
 }
 
-i.wi {
+i.wi.icon {
   display: block;
   padding: 40px;
   margin: 0 auto;

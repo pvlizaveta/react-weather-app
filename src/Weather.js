@@ -7,6 +7,7 @@ import "weather-react-icons/lib/css/weather-icons.css";
 import { WeatherIcon } from "weather-react-icons";
 import Specifics from "./Specifics";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -16,7 +17,7 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
-      time: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       city: response.data.name,
@@ -89,6 +90,7 @@ export default function Weather(props) {
             <h4 className="time">
               <FormattedDate date={weatherData.date} />
             </h4>
+            <WeatherForecast coordinates={weatherData.coordinates} />
           </div>
           <div className="vl"></div>
           <div className="column right">

@@ -28,41 +28,35 @@
   text-shadow: 3px 3px 7px black;
 }
 
-.units {
+.WeatherTemperature {
   display: block;
   position: absolute;
-  margin-top: 322px;
-  margin-left: 510px;
-  font-size: 25px;
-  color: white;
-  text-shadow: 3px 3px 7px black;
+  float: right;
+  margin-top: 309px;
+  margin-left: 460px;
 }
 .temperature {
-  float: right;
-  display: block;
-  position: absolute;
-  margin-top: 283px;
-  margin-left: 430px;
   font-size: 60px;
   color: white;
   text-shadow: 3px 3px 7px black;
 }
+
+.units {
+  font-size: 30px;
+  margin-top: -76px;
+  margin-left: 70px;
+  color: white;
+  text-shadow: 3px 3px 7px black;
+}
+
 .time {
   display: block;
   position: absolute;
-  margin-top: 330px;
-  margin-left: 60px;
+  margin-top: 356px;
+  margin-left: 40px;
   font-size: 20px;
   text-shadow: 3px 3px 5px black;
   color: white;
-}
-
-a.unit {
-  text-decoration: none;
-  color: white;
-}
-a.unit :hover {
-  text-decoration: none;
 }
 
 hr {

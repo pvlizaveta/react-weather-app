@@ -26,5 +26,5 @@ export default function FormattedDate(props) {
   let date = props.date.getDate();
   let month = months[props.date.getMonth()];
   let year = props.date.getFullYear();
-  return `${day} ${month} ${date}, ${year}`;
+  return `${day}, ${month} ${date}, ${year}`;
 }

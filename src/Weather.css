@@ -1,5 +1,7 @@
 .wewer {
+  position: absolute;
   background-size: cover;
+  width: 100%;
   background-position: bottom;
   border-radius: 20px;
 }
@@ -12,6 +14,7 @@
 }
 
 .right {
+  position: relative;
   width: 33.3%;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -21,19 +24,21 @@
 }
 
 .mainCity {
+  display: block;
+  position: relative;
   float: right;
-  margin-right: 30px;
-  margin-top: 45px;
+  right: 15px;
+  top: 30px;
   color: white;
   text-shadow: 3px 3px 7px black;
 }
 
 .WeatherTemperature {
+  position: relative;
   display: block;
-  position: absolute;
   float: right;
-  margin-top: 309px;
-  margin-left: 460px;
+  top: 300px;
+  left: 235px;
 }
 .temperature {
   font-size: 60px;
@@ -42,18 +47,18 @@
 }
 
 .units {
+  position: relative;
   font-size: 30px;
-  margin-top: -76px;
-  margin-left: 70px;
+  left: 8px;
   color: white;
   text-shadow: 3px 3px 7px black;
 }
 
 .time {
   display: block;
-  position: absolute;
-  margin-top: 356px;
-  margin-left: 40px;
+  position: relative;
+  top: 345px;
+  left: 40px;
   font-size: 20px;
   text-shadow: 3px 3px 5px black;
   color: white;
@@ -64,12 +69,12 @@ hr {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 h4 {
-  margin-left: 20px;
+  left: 20px;
 }
 .City {
   display: inline;
   text-decoration: none;
-  margin: 10px;
+  padding: 10px;
 }
 
 i.wi.icon {
@@ -81,13 +86,13 @@ i.wi.icon {
 }
 
 .Searching {
+  display: inline-block;
   display: flex;
   max-width: 100%;
-  margin-left: 0px;
 }
 
 .EnterACity {
-  display: block;
+  position: relative;
   border-radius: 20px;
   border-bottom: 1px solid lightgray;
   border-top: none;
@@ -120,7 +125,6 @@ select,
   font-size: 16px;
   width: 70px;
   height: 32px;
-  margin-right: 2px;
   border: transparent;
   background-color: transparent;
   transition: 0.3s ease-in;
@@ -128,25 +132,17 @@ select,
 .SubmitButton:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.Forms {
-  display: inline-block;
-}
+
 .col-9 {
   margin: 0 auto;
 }
 .col-4 {
-  margin-left: -25px;
+  left: -25px;
 }
 ul.specifications {
   list-style-type: none;
   text-align: center;
   padding: 20px;
-  margin: 0;
-  margin-top: 20px;
-}
-
-footer {
-  display: block;
-  position: fixed;
-  margin-left: 20px;
+  padding-top: 29px;
+  top: 20px;
 }

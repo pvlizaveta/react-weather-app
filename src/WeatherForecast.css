@@ -1,20 +1,29 @@
 .WeatherForecast {
-  display: block;
-  margin-top: 400px;
+  display: inline-block;
+  position: relative;
+  width: 97.6%;
+  height: 95px;
+  top: 290px;
+  left: 15px;
   text-align: center;
   color: white;
   border-bottom-left-radius: 20px;
   background-color: rgba(0, 0, 0, 0.5);
-  margin-left: 15px;
+}
+.forecastD {
+  position: relative;
+  margin: 0 auto;
 }
 .Wf {
-  margin-left: 50px;
-  margin-right: 40px;
+  position: relative;
+  left: 8px;
 }
 
 .col.forecast {
-  padding-bottom: 10px;
+  position: relative;
   padding-top: 10px;
+  padding-left: 0;
+  padding-right: 0;
 }
 i.wi.forecastIcon {
   font-size: 22px;

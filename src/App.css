@@ -1,10 +1,19 @@
 .container {
+  position: absolute;
+  left: 0;
+  right: 0;
   border-radius: 5px;
-  max-width: 900px;
+  width: 900px;
   height: 500px;
-  margin: auto;
-  margin-top: 60px;
+  padding-top: 60px;
   font-family: "Montserrat", sans-serif;
+}
+footer {
+  display: block;
+  position: relative;
+  float: inline-end;
+  top: 480px;
+  left: 30px;
 }
 
 a.footer {

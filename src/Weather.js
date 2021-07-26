@@ -75,52 +75,53 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div
-        className="wewer"
-        style={{ backgroundImage: `url("${weatherData.bgImg}"` }}
-      >
-        <div className="row">
-          <div className="column left">
+      <div className="Weather">
+        <div
+          className="pic"
+          style={{ backgroundImage: `url("${weatherData.bgImg}"` }}
+        >
+          <div className="swirl">
             <h1 className="mainCity">
               {weatherData.city}, {weatherData.country}
             </h1>
-            <div>
-              <WeatherTemperature celsius={weatherData.temperature} />
-            </div>
-            <h4 className="time">
+            <h4 className="date">
               <FormattedDate date={weatherData.date} />
             </h4>
-            <WeatherForecast coordinates={weatherData.coordinates} />
-          </div>
-          <div className="vl"></div>
-          <div className="column right">
             <WeatherIcon
               className="icon"
               iconId={weatherData.icon}
               name="owm"
             />
+            <div>
+              <WeatherTemperature celsius={weatherData.temperature} />
+            </div>
+
             <h5 className="text-capitalize">{weatherData.condition}</h5>
+
+            <WeatherForecast coordinates={weatherData.coordinates} />
             <hr></hr>
             <div className="Forms">
               <form onSubmit={handleSubmit}>
                 <div className="Searching">
-                  <div className="col-9">
-                    <input
-                      className="EnterACity"
-                      type="search"
-                      placeholder="  Enter a city"
-                      autoFocus="on"
-                      autoComplete="off"
-                      onChange={handleCityChange}
-                    />
-                  </div>
-                  <div className="col-4">
-                    <input
-                      type="submit"
-                      className="SubmitButton"
-                      value="Search"
-                      size="10"
-                    />
+                  <div className="row">
+                    <div className="col-9">
+                      <input
+                        className="EnterACity"
+                        type="search"
+                        placeholder="  Enter a city.."
+                        autoFocus="on"
+                        autoComplete="off"
+                        onChange={handleCityChange}
+                      />
+                    </div>
+                    <div className="col-3">
+                      <input
+                        type="submit"
+                        className="SubmitButton"
+                        value="Search"
+                        size="10"
+                      />
+                    </div>
                   </div>
                 </div>
               </form>

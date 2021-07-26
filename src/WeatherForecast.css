@@ -1,40 +1,31 @@
 .WeatherForecast {
-  display: inline-block;
-  position: relative;
-  width: 97.6%;
-  height: 95px;
-  top: 290px;
-  left: 15px;
-  text-align: center;
+  margin-top: 50px;
   color: white;
-  border-bottom-left-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px black;
+  text-align: center;
 }
-.forecastD {
-  position: relative;
-  margin: 0 auto;
+.row {
+  flex-wrap: nowrap;
+  display: flex;
+  margin-left: 15px;
+  margin-right: 15px;
 }
-.Wf {
-  position: relative;
-  left: 8px;
+.col {
+  padding: 0;
 }
-
-.col.forecast {
-  position: relative;
-  padding-top: 10px;
-  padding-left: 0;
-  padding-right: 0;
-}
-i.wi.forecastIcon {
-  font-size: 22px;
-  padding-top: 4px;
-  padding-bottom: 6px;
+.forecast-day {
+  font-size: 16px;
+  padding-bottom: 5px;
 }
 
-.forecast-temp {
-  font-size: 15px;
+.forecastIcon {
+  font-size: 20px;
 }
-
+.forecast-temp-max {
+  font-weight: 600;
+  font-size: 14px;
+}
 .forecast-temp-min {
-  color: lightgrey;
+  font-weight: 100;
+  font-size: 13px;
 }

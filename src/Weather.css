@@ -1,148 +1,101 @@
-.wewer {
-  position: absolute;
-  background-size: cover;
-  width: 100%;
-  background-position: bottom;
-  border-radius: 20px;
+:root {
+  --text-color: white;
+  --text-shadow: 2px 2px 4px black;
 }
 
-.column {
-  float: left;
-}
-.left {
-  width: 65%;
-}
-
-.right {
-  position: relative;
-  width: 33.3%;
+.Weather {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  color: white;
 }
 
-.mainCity {
-  display: block;
+.pic {
   position: relative;
-  float: right;
-  right: 15px;
-  top: 30px;
-  color: white;
-  text-shadow: 3px 3px 7px black;
-}
-
-.WeatherTemperature {
-  position: relative;
-  display: block;
-  float: right;
-  top: 300px;
-  left: 235px;
-}
-.temperature {
-  font-size: 60px;
-  color: white;
-  text-shadow: 3px 3px 7px black;
-}
-
-.units {
-  position: relative;
-  font-size: 30px;
-  left: 8px;
-  color: white;
-  text-shadow: 3px 3px 7px black;
-}
-
-.time {
-  display: inline;
-  position: relative;
-  top: 345px;
-  left: 40px;
-  font-size: 19px;
-  text-shadow: 3px 3px 5px black;
-  color: white;
-}
-
-hr {
-  width: 250px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-h4 {
-  left: 20px;
-}
-.City {
-  display: inline;
-  text-decoration: none;
-  padding: 10px;
-}
-
-i.wi.icon {
-  display: block;
-  padding: 40px;
-  margin: 0 auto;
-  color: white;
-  font-size: 50px;
-}
-
-.Searching {
-  display: inline-block;
-  display: flex;
-  max-width: 100%;
-}
-
-.EnterACity {
-  position: relative;
+  width: 320px;
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 20px;
-  border-bottom: 1px solid lightgray;
+  box-shadow: 10px 10px 15px rgb(0, 0, 0, 20%);
+}
+.swirl {
+  background-image: linear-gradient(rgba(247, 247, 247, 0), rgba(0, 0, 0, 1));
+  width: 320px;
+  height: 600px;
+  border-radius: 20px;
+}
+
+.date {
+  font-size: 16px;
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
+}
+.mainCity {
+  color: var(--text-color);
+  font-size: 28px;
+  padding-top: 20px;
+  text-shadow: var(--text-shadow);
+}
+.icon {
+  font-size: 40px;
+  padding: 20px;
+  color: var(--text-color);
+  text-shadow: 1px 1px 15px black;
+}
+.text-capitalize {
+  font-size: 16px;
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
+  font-weight: 600;
+}
+hr {
+  border-top: 1pt solid white;
+  width: 300px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.col-9 {
+  padding-right: 0;
+  padding-left: 0;
+}
+.EnterACity {
+  width: 100%;
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
   border-top: none;
   border-left: none;
   border-right: none;
-  width: 190px;
-  height: 32px;
-  padding: 3px;
-  font-size: 15px;
-  background-color: transparent;
-  transition: 0.3s ease-in-out;
+  border-bottom: 1px solid darkgrey;
 }
-.EnterACity:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-color: transparent;
+::placeholder {
+  color: lightgray;
+  font-size: 14px;
 }
-.EnterACity::placeholder {
-  color: white;
-  opacity: 1;
-  background-color: transparent;
-}
-input,
-select,
-.SubmitButton {
-  color: white;
-  background-color: transparent;
+.col-3 {
+  padding: 0;
+  margin-left: 7px;
 }
 .SubmitButton {
   border-radius: 20px;
-  font-size: 16px;
-  width: 70px;
-  height: 32px;
-  border: transparent;
   background-color: transparent;
-  transition: 0.3s ease-in;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 4px 10px 4px 10px;
 }
-.SubmitButton:hover {
+:hover.SubmitButton {
   background-color: rgba(0, 0, 0, 0.2);
 }
-
-.col-9 {
-  margin: 0 auto;
-}
-.col-4 {
-  left: -25px;
-}
-ul.specifications {
+ul {
   list-style-type: none;
-  text-align: center;
-  padding: 20px;
-  padding-top: 29px;
-  top: 20px;
+  margin-top: 10px;
+  padding: 0;
+}
+li {
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
+  font-size: 14px;
+}
+hr.specifics {
+  margin: 7px;
 }

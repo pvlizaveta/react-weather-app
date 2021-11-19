@@ -1,16 +1,18 @@
 .App {
   width: 320px;
-  height: 600px;
+  height: auto;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 70px;
   font-family: "Montserrat", sans-serif;
   text-align: center;
 }
-
+.container {
+  padding: 0;
+}
 footer {
   font-size: 12px;
   padding: 4px;
-  margin-left: 23px;
+  text-align: center;
 }
 
 footer :hover {
